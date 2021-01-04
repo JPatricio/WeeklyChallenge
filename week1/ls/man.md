@@ -11,144 +11,208 @@ none of **-cftuvSUX** nor **--sort**.
 
 Mandatory arguments to long options are mandatory for short options too.
 
-**-a, --all**
+Options
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do not ignore entries starting with .
+     -@  TODO
+         Display extended attribute keys and sizes.
 
--A, --almost-all
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do not list implied . and ..
---author
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; with -l, print the author of each file
--b, --escape
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print octal escapes for nongraphic characters
---block-size=SIZE
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; use SIZE-byte blocks. See SIZE format below
--B, --ignore-backups
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do not list implied entries ending with ~
--c
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; with -lt: sort by, and show, ctime (time of last modification of file status information) with -l: show ctime and sort by name otherwise: sort by ctime
--C
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list entries by columns
---color[=WHEN]
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; colorize the output. WHEN defaults to 'always' or can be 'never' or 'auto'. More info below
--d, --directory
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list directory entries instead of contents, and do not dereference symbolic links
--D, --dired
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; generate output designed for Emacs' dired mode
--f
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do not sort, enable -aU, disable -ls --color
--F, --classify
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; append indicator (one of */=>@|) to entries
---file-type
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; likewise, except do not append '*'
---format=WORD
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; across -x, commas -m, horizontal -x, long -l, single-column -1, verbose -l, vertical -C
---full-time
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; like -l --time-style=full-iso
--g
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; like -l, but do not list owner
---group-directories-first
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; group directories before files.
-augment with a --sort option, but any
-use of --sort=none (-U) disables grouping
--G, --no-group
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in a long listing, don't print group names
--h, --human-readable
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; with -l, print sizes in human readable format (e.g., 1K 234M 2G)
---si
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; likewise, but use powers of 1000 not 1024
--H, --dereference-command-line
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; follow symbolic links listed on the command line
---dereference-command-line-symlink-to-dir
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; follow each command line symbolic link that points to a directory
---hide=PATTERN
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do not list implied entries matching shell PATTERN (overridden by -a or -A)
---indicator-style=WORD
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; append indicator with style WORD to entry names: none (default), slash (-p), file-type (--file-type), classify (-F)
--i, --inode
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print the index number of each file
--I, --ignore=PATTERN
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do not list implied entries matching shell PATTERN
--k
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; like --block-size=1K
--l
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; use a long listing format
--L, --dereference
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; when showing file information for a symbolic link, show information for the file the link references rather than for the link itself
--m
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fill width with a comma separated list of entries
--n, --numeric-uid-gid
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; like -l, but list numeric user and group IDs
--N, --literal
-print raw entry names (don't treat e.g. control characters specially)
--o
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; like -l, but do not list group information
--p, --indicator-style=slash
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; append / indicator to directories
--q, --hide-control-chars
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print ? instead of non graphic characters
---show-control-chars
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; show non graphic characters as-is (default unless program is 'ls' and output is a terminal)
--Q, --quote-name
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; enclose entry names in double quotes
---quoting-style=WORD
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; use quoting style WORD for entry names: literal, locale, shell, shell-always, c, escape
--r, --reverse
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; reverse order while sorting
--R, --recursive
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list subdirectories recursively
--s, --size
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print the allocated size of each file, in blocks
--S
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort by file size
---sort=WORD
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort by WORD instead of name: none -U, extension -X, size -S, time -t, version -v
---time=WORD
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; with -l, show time as WORD instead of modification time: atime -u, access -u, use -u, ctime -c, or status -c; use specified time as sort key if --sort=time
---time-style=STYLE
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; with -l, show times using style STYLE: full-iso, long-iso, iso, locale, +FORMAT. FORMAT is interpreted like 'date'; if FORMAT is FORMAT1<newline>FORMAT2, FORMAT1 applies to non-recent files and FORMAT2 to recent files; if STYLE is prefixed with 'posix-', STYLE takes effect only outside the POSIX locale
--t
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort by modification time
--T, --tabsize=COLS
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; assume tab stops at each COLS instead of 8
--u
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; with -lt: sort by, and show, access time with -l: show access time and sort by name otherwise: sort by access time
--U
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do not sort; list entries in directory order
--v
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; natural sort of (version) numbers within text
--w, --width=COLS
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; assume screen width instead of current value
--x
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list entries by lines instead of by columns
--X
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort alphabetically by entry extension
--1
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list one file per line
+     -1  TODO    
+         (The numeric digit 'one'.)  Force output to be one entry per line.
+         This is the default when output is not to a terminal.
+
+     -a  --all    
+         List all entries including those starting with a dot .
+     
+     -A  --almost-all    
+         List all entries including those starting with a dot .
+         Except for . and ..
+         This option is always set for the superuser (via sudo).
+
+     -B  TODO
+         Force printing of non-printable characters (as defined by
+         ctype(3) and current locale settings) in file names as \xxx,
+         where xxx is the numeric value of the character in octal.
+
+     -b  TODO
+         As -B, but use C escape codes whenever possible.
+
+     -C  TODO
+         Force multi-column output; this is the default when output is to
+         a terminal.
+
+     -c  TODO
+         Use time when file status was last changed for sorting or printing.
+
+     -d  TODO
+         Directories are listed as plain files (not searched recursively).
+
+     -F  TODO
+         Display a slash / immediately after each pathname that is a
+         directory, an asterisk * after each that is executable, an at
+         sign @ after each symbolic link, an equals sign = after
+         each socket, a percent sign % after each whiteout, and a
+         vertical bar | after each that is a FIFO.
+
+     -f  TODO
+         Output is not sorted.
+
+     -G  TODO
+         Enable colour output.
+         This option is equivalent to defining CLICOLOR in the environment.(See below.)
+
+     -g  TODO
+         This option is deprecated. This option is only available for compatibility
+         with POSIX; it is used to display the group name in the long (-l) format output
+         (the owner name is suppressed).
+
+     -H  TODO
+         Symbolic links on the command line are followed.
+         This option is assumed if none of the -F, -d, or -l options are specified.
+
+     -h  TODO
+         When used with the -l option, use unit suffixes: Byte, Kilobyte,
+         Megabyte, Gigabyte, Terabyte and Petabyte in order to reduce the
+         number of digits to three or less using base 2 for sizes.
+
+     -i  TODO
+         For each file, print the file's file serial number 
+         (inode number).
+
+     -k  TODO
+         If the -s option is specified, print the file size allocation in
+         kilobytes, not blocks.  This option overrides the environment
+         variable BLOCKSIZE.
+
+     -L  TODO
+         If argument is a symbolic link, list the file or directory the
+         link references rather than the link itself.  This option cancels
+         the -P option.
+
+     -l 
+         List in long format. Ownership, Date/Time etc (See below)
+         For terminal output, a total sum of all the file sizes is 
+         output on a line before the long listing.
+         If the file is a symbolic link the pathname of the linked-to file is
+         preceded by ->
+
+     -m  TODO
+         Stream output format; list files across the page, separated by commas.
+
+     -n  TODO
+         Display user and group IDs numerically rather than converting to
+         a user or group name in a long (-l) output. This option turns on the -l option.
+
+     -O  TODO
+         Include the file flags in a long (-l) output.
+
+     -o  TODO
+         List in long format, but omit the group id.
+
+     -P  TODO
+         If argument is a symbolic link, list the link itself rather than
+         the object the link references.  This option cancels the -H and
+         -L options.
+
+     -p  TODO
+         Write a slash (/) after each filename if that file is a directory.
+
+     -q  TODO
+         Force printing of non-graphic characters in file names as the
+         character `?'; this is the default when output is to a terminal.
+
+     -R  TODO
+         Recursively list subdirectories encountered.
+
+     -r  TODO
+         Reverse the order of the sort to get reverse lexicographical
+         order or the oldest entries first.
+         (or largest files last, if combined with sort by size)
+
+     -S  TODO
+         Sort files by size
+
+     -s  TODO
+         Display the number of file system blocks actually used by each
+         file, in units of 512 bytes, where partial units are rounded up
+         to the next integer value.   If the output is to a terminal, a
+         total sum for all the file sizes is output on a line before the
+         listing.  The environment variable BLOCKSIZE overrides the unit
+         size of 512 bytes.
+
+     -T  TODO
+         When used with the -l (lowercase letter ``ell'') option, display
+         complete time information for the file, including month, day,
+         hour, minute, second, and year.
+
+     -t  TODO
+         Sort by time modified (most recently modified first) before
+         sorting the operands by lexicographical order.
+
+     -u  TODO
+         Use time of last access, instead of last modification of the file
+         for sorting (-t) or printing (-l).
+
+     -v  TODO
+         Force unedited printing of non-graphic characters.
+         This is the default when output is not to a terminal.
+
+     -W  TODO
+         Display whiteouts when scanning directories. (-S) flag).
+
+     -w  TODO
+         Force raw printing of non-printable characters.  This is the
+         default when output is not to a terminal.
+
+     -x  TODO
+         The same as -C, except that the multi-column output is produced
+         with entries sorted across, rather than down, the columns.
 
 Using color to distinguish file types is disabled both by default and with --color=never. With --color=auto, ls emits color codes only when standard output is connected to a terminal. The LS_COLORS environment variable can change the settings. Use the dircolors command to set it.
+
+**The Long Format**
+
+If the -l option is given, the following information is displayed for each file: `file mode, number of links, owner name, group name, number of bytes in the file, abbreviated month, day-of-month file was last modified, hour file last modified, minute file last modified, and the pathname.`
+
+In addition, for each directory whose contents are displayed, the total number of 512-byte blocks used by the files in the directory is displayed on a line by itself, immediately before the information for the files in the directory. If the file or directory has extended attributes, the permissions field printed by the -l option is followed by an @ character. Otherwise, if the file or directory has extended security information, the permissions field printed by the -l option is followed by a + character.
+
+If the modification time of the file is more than 6 months in the past or future, then the year of the last modification is displayed in place of the hour and minute fields.
+
+If the owner or group names are not a known user or group name, or the -n option is given, the numeric ID's are displayed.
+
+If the file is a character special or block special file, the major and minor device numbers for the file are displayed in the size field. If the file is a symbolic link, the
+pathname of the linked-to file is preceded by ``->''.
+
+The file mode printed under the -l option consists of the entry type, owner permissions, and group permissions. The entry type character describes the type of file, as follows:
+
+    b Block special file.
+    c Character special file.
+    d Directory.
+    l Symbolic link.
+    s Socket link.
+    p FIFO.
+    - Regular file.
+
+The next three fields are three characters each: owner permissions, group permissions, and other permissions. Each field has three character positions:
+
+1. If r, the file is readable; if -, it is not readable.
+
+2. If w, the file is writable; if -, it is not writable.
+
+3. The first of the following that applies:
+
+    S If in the owner permissions, the file is not executable and set-user-ID mode is set. If in the group permissions, the file is not executable and set-group-ID mode is set.
+    s If in the owner permissions, the file is executable and set-user-ID mode is set. If in the group permissions, the file is executable and setgroup-ID mode is set.
+    x The file is executable or the directory is searchable.
+    - The file is neither readable, writable, executable, nor set-user-ID nor set-group-ID mode, nor sticky. (See below.)
+
+These next two apply only to the third character in the last group (other permissions).
+
+    T The sticky bit is set (mode 1000), but not execute or search permission. (See chmod(1) or sticky(8).)
+    t The sticky bit is set (mode 1000), and is searchable or executable. (See chmod(1) or sticky(8).)
+
+ls-F passes its arguments to ls if it is given any switches, so `alias ls ls-F' generally does the right thing.
 
 ### Exit status:
 1. if OK,
 2. if minor problems (e.g., cannot access subdirectory),
 3. if serious trouble (e.g., cannot access command-line argument).
-
-### Author
-Written by Richard M. Stallman and David MacKenzie.
-
-### Reporting Bugs
-Report ls bugs to bug-coreutils@gnu.org
-
-GNU coreutils home page: <http://www.gnu.org/software/coreutils/>
-
-General help using GNU software: <http://www.gnu.org/gethelp/>
-
-Report ls translation bugs to <http://translationproject.org/team/>
-
-### Copyright
-Copyright Â© 2010 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
-
-This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law.
-
-### See Also
-The full documentation for ls is maintained as a Texinfo manual. If the info and ls programs are properly installed at your site, the command
