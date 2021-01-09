@@ -1,5 +1,6 @@
 import os
 import stat
+from argparse import ArgumentParser
 from datetime import datetime
 
 from grp import getgrgid
@@ -19,8 +20,13 @@ class DiskObject(object):
         self.file_type = self.IS_LINK if os.path.islink(full_path) else \
             self.IS_DIR if os.path.isdir(full_path) else self.IS_FILE
 
-    def __str__(self, length: int = None, detailed: bool = False) -> str:
-        if detailed:
+    def __str__(self, length: int = None, args: ArgumentParser = None) -> str:
+        if args.clarify:
+            self.name += '/' if self.file_type == self.IS_DIR else ''
+            self.name += '@' if self.file_type == self.IS_LINK else ''
+            self.name += '*' if self.file_type == self.IS_FILE and os.access(self.full_path, os.X_OK) else ''
+
+        if args.detailed:
             details = os.stat(self.full_path)
             mod_timestamp = datetime.fromtimestamp(details.st_mtime)
             return f"{stat.filemode(details.st_mode)} " \
@@ -45,4 +51,5 @@ class DiskObject(object):
         return f"{BColors.OKCYAN if self.file_type == self.IS_DIR else ''}" \
                f"{BColors.MAGENTA if self.file_type == self.IS_LINK else ''}" \
                f"{BColors.BOLD if self.file_type == self.IS_DIR or self.IS_LINK else ''}" \
-               f"{self.name.ljust(length, ' ')}{BColors.ENDC if self.file_type == self.IS_DIR or self.IS_LINK else ''}"
+               f"{self.name.ljust(length, ' ')}" \
+               f"{BColors.ENDC if self.file_type == self.IS_DIR or self.IS_LINK else ''}"\

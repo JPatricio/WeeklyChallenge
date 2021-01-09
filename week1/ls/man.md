@@ -46,7 +46,7 @@ Options
      -d  TODO
          Directories are listed as plain files (not searched recursively).
 
-     -F  TODO
+     -F  --clarify
          Display a slash / immediately after each pathname that is a
          directory, an asterisk * after each that is executable, an at
          sign @ after each symbolic link, an equals sign = after
@@ -59,11 +59,6 @@ Options
      -G  TODO
          Enable colour output.
          This option is equivalent to defining CLICOLOR in the environment.(See below.)
-
-     -g  TODO
-         This option is deprecated. This option is only available for compatibility
-         with POSIX; it is used to display the group name in the long (-l) format output
-         (the owner name is suppressed).
 
      -H  TODO
          Symbolic links on the command line are followed.
