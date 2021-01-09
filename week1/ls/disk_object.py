@@ -8,11 +8,16 @@ from utils.ansi_color_sequences import BColors
 
 
 class DiskObject(object):
-    def __init__(self, full_path, is_file):
+    IS_FILE = 1
+    IS_DIR = 2
+    IS_LINK = 3
+
+    def __init__(self, full_path: str):
         self.full_path = full_path
         # Everything after the last / is the file name
         self.name = full_path.split('/')[-1]
-        self.is_file = is_file
+        self.file_type = self.IS_LINK if os.path.islink(full_path) else \
+            self.IS_DIR if os.path.isdir(full_path) else self.IS_FILE
 
     def __str__(self, length: int = None, detailed: bool = False) -> str:
         if detailed:
@@ -26,14 +31,18 @@ class DiskObject(object):
                    f"{mod_timestamp.strftime('%b')} " \
                    f"{mod_timestamp.strftime('%d')} " \
                    f"{mod_timestamp.strftime('%H:%M')} " \
-                   f"{BColors.OKCYAN if not self.is_file else ''}" \
-                   f"{BColors.BOLD if not self.is_file else ''}" \
-                   f"{self.name}{BColors.ENDC if not self.is_file else ''}"
+                   f"{BColors.OKCYAN if self.file_type == self.IS_DIR else ''}" \
+                   f"{BColors.MAGENTA if self.file_type == self.IS_LINK else ''}" \
+                   f"{BColors.BOLD if self.file_type == self.IS_DIR or self.IS_LINK else ''}" \
+                   f"{self.name}" \
+                   f"{BColors.ENDC if self.file_type == self.IS_DIR or self.IS_LINK else ''}" \
+                   f"{' -> ' + os.readlink(self.full_path) if self.file_type == self.IS_LINK else ''}"
 
         if not length:
             length = len(self.name)+1
 
-        # Directories should show blue
-        return f"{BColors.OKCYAN if not self.is_file else ''}" \
-               f"{BColors.BOLD if not self.is_file else ''}" \
-               f"{self.name.ljust(length, ' ')}{BColors.ENDC if not self.is_file else ''}"
+        # Directories should show blue, links magenta
+        return f"{BColors.OKCYAN if self.file_type == self.IS_DIR else ''}" \
+               f"{BColors.MAGENTA if self.file_type == self.IS_LINK else ''}" \
+               f"{BColors.BOLD if self.file_type == self.IS_DIR or self.IS_LINK else ''}" \
+               f"{self.name.ljust(length, ' ')}{BColors.ENDC if self.file_type == self.IS_DIR or self.IS_LINK else ''}"

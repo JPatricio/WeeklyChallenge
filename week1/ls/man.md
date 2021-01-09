@@ -16,7 +16,7 @@ Options
      -@  TODO
          Display extended attribute keys and sizes.
 
-     -1  TODO    
+     -1  --one    
          (The numeric digit 'one'.)  Force output to be one entry per line.
          This is the default when output is not to a terminal.
 

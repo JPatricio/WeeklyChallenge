@@ -28,6 +28,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Extended ls command')
     parser.add_argument('path', nargs='?', type=str, default=os.getcwd(),
                         help='The directory for which contents should be shown')
+    parser.add_argument('-1', '--one', dest='one', action='store_const',
+                        const=True, default=False,
+                        help="""(The numeric digit 'one')  Force output to be one entry per line.\n""" \
+                             """This is the default when output is not to a terminal.""")
     all_group = parser.add_mutually_exclusive_group(required=False)
     all_group.add_argument('-a', '--all', dest='all', action='store_const',
                         const=True, default=False,
@@ -42,5 +46,5 @@ if __name__ == "__main__":
     main(args)
 
 # TODO: Fix the final % being printed (wtf)
-# TODO: Fix the coloring for links
 # TODO: Remove hardcoded column sizes on -l option
+# TODO: Add tests for heavens sake

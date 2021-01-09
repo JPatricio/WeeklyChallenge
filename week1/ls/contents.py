@@ -32,7 +32,7 @@ class DirectoryContents(object):
 
         for object_full_path in objects_in_path:
             # Add to contents
-            object = DiskObject(object_full_path, os.path.isfile(object_full_path))
+            object = DiskObject(object_full_path)
             self.contents.append(object)
             # Track max width
             self.max_width_filename = max(self.max_width_filename, len(object.name))
@@ -56,7 +56,10 @@ class DirectoryContents(object):
             # TODO: ls prints order vertically, we print horizontally. Crap. Check out how to fix it later.
             printed_obj = 0
             for file in sorted(self.contents, key=lambda disk_object: disk_object.name):
-                print(file.__str__(length=self.max_width_filename), end="\n" if printed_obj >= obj_per_row else "")
+                print(
+                    file.__str__(length=self.max_width_filename),
+                    end="\n" if printed_obj >= obj_per_row or self.args.one else ""
+                )
                 printed_obj = printed_obj + 1 if printed_obj >= obj_per_row else 0
         else:
             # This will be a detailed view.
