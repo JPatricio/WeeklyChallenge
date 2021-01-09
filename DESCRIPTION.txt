@@ -1,0 +1,26 @@
+jls
+======
+
+My custom implementation of the ls command.
+Don't use it really. It's just customized for my own preferences
+
+Installation
+------------
+
+::
+
+    pip install jls
+
+
+Install the package:
+
+::
+
+    python setup.py install
+
+Example
+--------
+
+.. code::
+
+    jls ~
