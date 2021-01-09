@@ -4,7 +4,7 @@ import math
 import os
 from argparse import Namespace
 
-from disk_object import DiskObject
+from jls.disk_object import DiskObject
 
 
 class DirectoryContents(object):

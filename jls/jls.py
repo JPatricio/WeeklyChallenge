@@ -8,10 +8,10 @@ Advanced Stretch Goal: Use asyncio to concurrently gather extended attributes of
 import argparse
 import os
 
-from contents import DirectoryContents
+from jls.contents import DirectoryContents
 
 
-def main(args: argparse.Namespace):
+def main():
     # Let's split this into steps -
     # 1. Implement a simple ls, no arguments (other than directory) [DONE]
     # 2. Implement argument parsing. Add --help [DONE]
@@ -21,11 +21,6 @@ def main(args: argparse.Namespace):
     # 6. Set up files for packaging
     # 7. Stretch goal
 
-    dc = DirectoryContents(args)
-    dc.print_contents()
-
-
-if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Extended ls command')
     parser.add_argument('path', nargs='?', type=str, default=os.getcwd(),
                         help='The directory for which contents should be shown')
@@ -60,7 +55,13 @@ if __name__ == "__main__":
                         const=True, default=False,
                         help='do not list implied . and ..')
     args = parser.parse_args()
-    main(args)
+
+    dc = DirectoryContents(args)
+    dc.print_contents()
+
+
+if __name__ == "__main__":
+    main()
 
 # TODO: Remove hardcoded column sizes on -l option
 # TODO: Add missing flags on -F option

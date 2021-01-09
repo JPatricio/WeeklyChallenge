@@ -5,7 +5,7 @@ from datetime import datetime
 
 from grp import getgrgid
 from pwd import getpwuid
-from utils.ansi_color_sequences import BColors
+from jls.utils.ansi_color_sequences import BColors
 
 
 class DiskObject(object):
