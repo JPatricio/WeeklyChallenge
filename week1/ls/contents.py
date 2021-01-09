@@ -16,8 +16,8 @@ class DirectoryContents(object):
         :param path: Path must be absolute
         """
         self.islink = os.path.islink(args.path)
-        self.isdir = os.path.isdir(args.path)
-        self.follow_link = self.islink and self.isdir and not args.detailed
+        self.isdir = os.path.isdir(args.path) and not args.dir_as_files
+        self.follow_link = self.islink and self.isdir and not args.detailed and not args.clarify
         self.path = os.readlink(args.path) if self.follow_link else args.path
         self.args = args
         self.contents = list()

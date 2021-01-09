@@ -43,7 +43,7 @@ Options
      -c  TODO
          Use time when file status was last changed for sorting or printing.
 
-     -d  TODO
+     -d  --dir-as-files
          Directories are listed as plain files (not searched recursively).
 
      -F  --clarify
