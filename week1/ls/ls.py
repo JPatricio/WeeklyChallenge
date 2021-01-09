@@ -11,11 +11,11 @@ import os
 from contents import DirectoryContents
 
 
-def main(args):
+def main(args: argparse.Namespace):
     # Let's split this into steps -
     # 1. Implement a simple ls, no arguments (other than directory) [DONE]
     # 2. Implement argument parsing. Add --help [DONE]
-    # 3. Implement 55 options (bloody hell) [5/36]
+    # 3. Implement 55 options (bloody hell) [7/36]
     # 4. Testing
     # 5. Custom options (directory size?)
     # 6. Set up files for packaging
@@ -41,6 +41,9 @@ if __name__ == "__main__":
                            const=True, default=False,
                            help='do not list implied . and ..')
     parser.add_argument('-d', '--dir-as-files', dest='dir_as_files', action='store_const',
+                        const=True, default=False,
+                        help='Directories are listed as plain files (not searched recursively).')
+    parser.add_argument('-f', '--no-sort', dest='no_sort', action='store_const',
                         const=True, default=False,
                         help='Directories are listed as plain files (not searched recursively).')
     parser.add_argument('-F', '--clarify', dest='clarify', action='store_const',

@@ -1,6 +1,6 @@
 import os
 import stat
-from argparse import ArgumentParser
+from argparse import Namespace
 from datetime import datetime
 
 from grp import getgrgid
@@ -20,7 +20,7 @@ class DiskObject(object):
         self.file_type = self.IS_LINK if os.path.islink(full_path) else \
             self.IS_DIR if os.path.isdir(full_path) else self.IS_FILE
 
-    def __str__(self, length: int = None, args: ArgumentParser = None) -> str:
+    def __str__(self, length: int = None, args: Namespace = None) -> str:
         if args.clarify:
             self.name += '/' if self.file_type == self.IS_DIR else ''
             self.name += '@' if self.file_type == self.IS_LINK else ''

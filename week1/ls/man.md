@@ -53,7 +53,7 @@ Options
          each socket, a percent sign % after each whiteout, and a
          vertical bar | after each that is a FIFO.
 
-     -f  TODO
+     -f  --no-sort
          Output is not sorted.
 
      -G  TODO

@@ -2,15 +2,14 @@ import glob
 import itertools
 import math
 import os
-import sys
-from argparse import ArgumentParser
+from argparse import Namespace
 
 from disk_object import DiskObject
 
 
 class DirectoryContents(object):
 
-    def __init__(self, args: ArgumentParser):
+    def __init__(self, args: Namespace):
         """
         Will gather and store contents of a certain directory
         :param path: Path must be absolute
@@ -58,12 +57,14 @@ class DirectoryContents(object):
 
         # How many objects can be print per row
         obj_per_row = math.floor(terminal_width / self.max_width_filename)
+        if not self.args.no_sort:
+            self.contents.sort(key=lambda disk_object: disk_object.name)
 
         if not self.args.detailed:
             # By default, sort contents by name property
             # TODO: ls prints order vertically, we print horizontally. Crap. Check out how to fix it later.
             printed_obj = 0
-            for file in sorted(self.contents, key=lambda disk_object: disk_object.name):
+            for file in self.contents:
                 print(
                     file.__str__(length=self.max_width_filename, args=self.args),
                     end="\n" if printed_obj >= obj_per_row or self.args.one else ""
@@ -71,7 +72,7 @@ class DirectoryContents(object):
                 printed_obj = printed_obj + 1 if printed_obj >= obj_per_row else 0
         else:
             # This will be a detailed view.
-            for file in sorted(self.contents, key=lambda disk_object: disk_object.name):
+            for file in self.contents:
                 print(file.__str__(length=None, args=self.args))
 
         # This fixes some weird left out buffer on print
